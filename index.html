@@ -27,6 +27,10 @@ window.onload = function() {
 		sakura.send(module.value, val)
 		mes(sakura.getModule(module.value) + " へ " + Number(val) + " を発信！")
 	}
+	btn.onclick=function()
+	{
+		alert("送信するよ")
+	}
 }
 </script>
 <style>
@@ -40,6 +44,9 @@ body {
 <body>
 
 <h1 id=mes>IoTのテスト</h1>
+
+<button id=btn>タスケテー</button>
+
 
 </body>
 </html>
