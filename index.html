@@ -13,13 +13,16 @@
 window.onload = function() {
 	var sakura = new Sakuras([SAKURA_TOKEN, SAKURA_TOKEN2], function(id, val) {
 		console.log(id + " から " + val + " を受信！")
-		if (id == "d19") {
+		if (id == "d36") {
 			if (val == 1) {
 				mes.textContent = "1を受信！"
 				document.body.style.backgroundColor = "red"
 			} else if (val == 2) {
 				mes.textContent = "2を受信！"
 				document.body.style.backgroundColor = "white"
+			}else if (val == 3) {
+				mes.textContent = "3を受信！"
+				document.body.style.backgroundColor = "gray"
 			}
 		}
 	})
@@ -27,9 +30,12 @@ window.onload = function() {
 		sakura.send(module.value, val)
 		mes(sakura.getModule(module.value) + " へ " + Number(val) + " を発信！")
 	}
-	btn.onclick=function()
-	{
-		alert("送信するよ")
+	btn.onclick=function(){
+		sakura.send("d36",100)
+	//	alert("送信したよ")
+		/*
+		1?iot.in():wait6:cont
+		*/
 	}
 }
 </script>
